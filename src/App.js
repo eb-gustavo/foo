@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  static defaultProps = {
+    name: 'World'
+  }
+
+  static propTypes = {
+    name: PropTypes.string
+  }
+
   render() {
+    let {name} = this.props;
+
     return (
       <div className="App">
         <div className="App-header">
@@ -12,6 +23,9 @@ class App extends Component {
         </div>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+        <p>
+          Hello {name}!
         </p>
       </div>
     );
